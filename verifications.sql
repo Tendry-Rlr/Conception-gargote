@@ -27,3 +27,12 @@ select cd.*, cl.nom
 from 
 commande cd left join client cl on cd.id_client = cl.id_client;
 
+
+-- etape 5
+select s.*, count(c.id_commande) nbCommande, sum(cd.nombre * p.prix) ca
+from
+    commande c
+    left join commandedetail cd on c.id_commande = cd.id_commande
+    left join plat_carte p on p.id_plat = cd.id_plat
+    left join serveur s on s.id_serveur = c.id_serveur
+    group by s.id_serveur;
