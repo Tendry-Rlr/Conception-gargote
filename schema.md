@@ -2,15 +2,28 @@
 
 ## Travail : premiere table
 
-PLAT_CARTE (id_plat, nom,categorie, prix) 
+PLAT_CARTE (**id_plat**, nom,categorie, prix) 
  
  ## Piege : 
 - J'ai utilise le type **INTEGER** pour le prix
 - L'identifiant utilise est **SERIAL**
 
 # Etape 2 : Les categories
+## Travail :
+CATEGORIE(**id_categorie**, designation)
+PLAT_CARTE (**id_plat**, nom, #id_categorie, prix) 
 
 ## Piege : 
 - L'ajout d'une colonne categorie dans PLAT n'est pas pratique car on peut inserer n'importe quoi lors de l'insertion d'un nouveau plat sur la categorie
 Exemple : une plat de meme categorie n'est pas reconnu si la case est differente (dessert et Dessert)
 
+# Etape 3 : Les commandes
+
+## Travail : 
+
+COMMANDE (**id_commande**, designation, date)
+
+COMMANDEDETAIL(**id_commande_detail**, #id_commande, #id_plat,nombre)
+
+## Piege : 
+- on place la quantite dans le detail de la commande pour savoir le quantite par plat
