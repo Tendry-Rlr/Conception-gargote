@@ -36,3 +36,14 @@ from
     left join plat_carte p on p.id_plat = cd.id_plat
     left join serveur s on s.id_serveur = c.id_serveur
     group by s.id_serveur;
+
+-- etape 6
+select 
+    c.id_commande, sum(p.prix * cd.nombre) montant_du,
+    sum(pa.montant_payee) montant_payee,
+    sum(p.prix * cd.nombre) - sum(pa.montant_payee) reste_a_payer
+FROM commande c,
+join paiement pa on pa.id_commande = c.id_commande
+join commandedetail on cd.id_commande = c.id_commande
+join plat_carte p on p.id_plat = cd.id_plat
+GROUP BY c.id_commande;

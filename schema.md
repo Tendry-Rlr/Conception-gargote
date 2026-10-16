@@ -56,3 +56,14 @@ COMMANDE (**id_commande**, designation, date, #id_client, #id_table, #id_serveur
 ## Piege :
 - Une table de la salle et une commande sont deux choses differentes : on peut faire plusieurs commandes sur une meme table
 - Le nom table pose probleme en SQL car ce mot est utilise pour creer une table en base de donnee relationnelle
+
+# Etape 6 : Les paiements
+
+## Travail :
+
+TYPEPAIMENT(**id_type**, designation)
+
+PAIEMENT(**id_paiement**, #id_type ,#id_commande, montant_payee)
+
+## Piege :
+- Une colonne montant_payee dans la table commande ne suffit pas, car le client peut payer la commande a la fois en espece et aussi par mobile money
