@@ -21,3 +21,9 @@ from
     join commandedetail cd on c.id_commande = cd.id_commande
     join plat_carte p on p.id_plat = cd.id_plat
     group by c.id_commande;group by c.id_commande;
+
+-- etape 4
+select cd.*, cl.nom
+from 
+commande cd left join client cl on cd.id_client = cl.id_client;
+

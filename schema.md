@@ -27,3 +27,18 @@ COMMANDEDETAIL(**id_commande_detail**, #id_commande, #id_plat,nombre)
 
 ## Piege : 
 - on place la quantite dans le detail de la commande pour savoir le quantite par plat
+
+# Etape 4 : Les habitues
+
+## Travail
+
+CLIENT(**id_client**, nom)
+
+COMMANDE (**id_commande**, designation, date, #id_client, habitue)
+
+COMMANDEDETAIL(**id_commande_detail**, #id_commande, #id_plat, nombre)
+
+
+## Piege :
+ - La cle etrangere id_client est NOT NULL car on peut ne pas garder les clients de passage
+ -  La jointure utilisee est LEFT JOIN pour ne pas perdre aucune commande
