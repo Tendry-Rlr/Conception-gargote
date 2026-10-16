@@ -8,3 +8,9 @@ PLAT_CARTE (id_plat, nom,categorie, prix)
 - J'ai utilise le type **INTEGER** pour le prix
 - L'identifiant utilise est **SERIAL**
 
+# Etape 2 : Les categories
+
+## Piege : 
+- L'ajout d'une colonne categorie dans PLAT n'est pas pratique car on peut inserer n'importe quoi lors de l'insertion d'un nouveau plat sur la categorie
+Exemple : une plat de meme categorie n'est pas reconnu si la case est differente (dessert et Dessert)
+
